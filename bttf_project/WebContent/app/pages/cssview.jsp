@@ -74,6 +74,8 @@
     <!--========== PAGE LAYOUT ==========-->
     <!-- Service -->
     <% UserDTO boardviewer = (UserDTO)session.getAttribute("session_id");%>
+    <c:set var="recommedStatus" value="${requestScope.recommedStatus }"/>
+
 <%--     <c:set var="boardviewer" value="${pageScope.session }" /> --%>
     <div class="bg-color-sky-light fixed_container" data-auto-height="true">
         <div class="content-lg container" style="margin-top : 50px;">
@@ -98,6 +100,19 @@
                                     resize: none; background-color: #fff;" disabled>${board.post_contents }</pre>
                                 </div> 
 	                        <div class="mb-5">
+	                        	
+	                        	
+	                        	<c:if test="${recommedStatus eq 'check' }">
+										<a>취소${recommedStatus }</a>
+	                        	</c:if>
+	                        	<c:if test="${recommedStatus eq 'uncheck' }">
+										<a>추천</a>
+	                        	</c:if>
+	                        	
+	                        	
+	                        	
+	                        	
+	                        	
 	                        	<a href="${pageContext.request.contextPath }/pages/csslist.do" class="btn btn-default mt-4" id="edit" type="submit">글 목록</a>
 								<c:if test="${not empty sessionScope.session_id}">
 									<a href="${pageContext.request.contextPath }/pages/BookmarkOK.us?post_id=${board.post_id }" class="btn btn-default mt-4">북마크</a>

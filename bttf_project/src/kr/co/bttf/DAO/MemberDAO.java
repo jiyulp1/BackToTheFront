@@ -193,4 +193,15 @@ public class MemberDAO {
 		return sqlsession.selectOne("Member.getMyRecomendCount" , user_id);
 	}
 
+	public boolean checkRecommend(String user_id) {
+		System.out.println("cr" + user_id);
+		boolean result = false;
+		if((Integer)sqlsession.selectOne("Member.checkRecommend", user_id) == 1) {
+			result = true;
+		}
+		System.out.println("result" + result);
+		return result;
+	}
+
+
 }
