@@ -20,6 +20,10 @@ CREATE SEQUENCE ann_seq
 START WITH 1
 INCREMENT BY 1;
 
+CREATE SEQUENCE bookmark_seq
+START WITH 1
+INCREMENT BY 1;
+
 SELECT * FROM user_all ;
 
 -- 0. 권한 테이블
